@@ -1,0 +1,6 @@
+# app-ads.txt for Car Tow Jam: Parking Puzzle (Google AdMob)
+# AdMob only reads this file from the ROOT of the developer website in the App Store listing:
+#   https://kinexapps.com/app-ads.txt
+# Replace pub-XXXXXXXXXXXXXXXX with your AdMob publisher ID (AdMob > Settings > Account information),
+# remove the leading "# " from the line below, and upload the file to kinexapps.com.
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
