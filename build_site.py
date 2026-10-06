@@ -1,18 +1,18 @@
-"""Builds the Car Tow Jam: Parking Puzzle website (GitHub Pages): home (marketing + QR), privacy policy, terms of use,
+"""Builds the Tow Yard: Truck Parking Puzzle website (GitHub Pages): home (marketing + QR), privacy policy, terms of use,
 support, the QR/download redirect and app-ads.txt. Edit the constants below, run `python3 build_site.py`, commit, push.
 """
 from pathlib import Path
 ROOT = Path(__file__).parent
-GAME = "Car Tow Jam: Parking Puzzle"
+GAME = "Tow Yard: Truck Parking Puzzle"
 DEVELOPER = "Kinex Apps"
 DEV_SITE = "https://kinexapps.com/"
 EMAIL = "muhammadharisgift1@gmail.com"
-BASE = "https://mu-haris.github.io/Car-Tow-Jam-Parking-Puzzle/"
+BASE = "https://mu-haris.github.io/Tow-Yard/"
 # Paste the App Store link here once the app is live (e.g. https://apps.apple.com/app/id1234567890), then rebuild.
 # The QR code points at /download/, which forwards here, so the printed QR code never needs to change.
 APP_STORE_URL = ""
 PRICE = "$3.99"
-UPDATED = "September 30, 2026"
+UPDATED = "October 6, 2026"
 
 CSS = """
 :root{--teal:#0D838F;--teal-d:#0A4F57;--cream:#FFF6E4;--card:#FFFFFF;--ink:#2B1B10;--muted:#6B5646;--yellow:#FFC526;--red:#E8452C;--line:#EAD9BD;--bg:#FFF1D6}
@@ -81,7 +81,7 @@ def page(title, body, path, description, depth=1):
 </head>
 <body>
 <header class="top"><div class="wrap">
-<a class="brand" href="{up}"><img src="{up}assets/icon-512.png" alt=""><span>Car Tow Jam</span></a>
+<a class="brand" href="{up}"><img src="{up}assets/icon-512.png" alt=""><span>Tow Yard</span></a>
 <nav><a href="{up}">Home</a><a href="{up}support/">Support</a><a href="{up}privacy/">Privacy</a><a href="{up}terms/">Terms</a></nav>
 </div></header>
 {body}
@@ -105,9 +105,9 @@ home = f"""
 <h1>{GAME}</h1>
 <p class="lead">Untangle the traffic jam! Tap cars in the right order, send them onto matching tow trucks and ferries, and keep the spare parking spots free. A relaxing, colourful puzzle across a tropical harbor, snowy docks and an autumn lake.</p>
 {store_button}
-<div class="qr"><img src="assets/qr-app-store-small.png" alt="QR code that opens Car Tow Jam on the App Store"><p><strong>Scan to download</strong><br>Point your iPhone camera at the code to open Car Tow Jam on the App Store.</p></div>
+<div class="qr"><img src="assets/qr-app-store-small.png" alt="QR code that opens Tow Yard on the App Store"><p><strong>Scan to download</strong><br>Point your iPhone camera at the code to open Tow Yard on the App Store.</p></div>
 </div>
-<img class="logo" src="assets/logo.png" alt="Car Tow Jam: Parking Puzzle logo">
+<img class="logo" src="assets/logo.png" alt="Tow Yard: Truck Parking Puzzle logo">
 </div></section>
 <section><div class="wrap">
 <h2>Screenshots</h2>
@@ -125,7 +125,7 @@ home = f"""
 </div>
 </div></section>
 """
-write("index.html", page(GAME, home, "", "Car Tow Jam: Parking Puzzle, a relaxing traffic puzzle game for iPhone and iPad.", depth=0).replace('href="../','href="').replace('src="../','src="'))
+write("index.html", page(GAME, home, "", "Tow Yard: Truck Parking Puzzle, a relaxing traffic puzzle game for iPhone and iPad.", depth=0).replace('href="../','href="').replace('src="../','src="'))
 
 privacy = f"""
 <main class="wrap"><article class="doc">
@@ -171,7 +171,7 @@ terms = f"""
 <p>We grant you a personal, non-transferable, non-exclusive license to use the App on Apple devices you own or control, as permitted by the App Store terms.</p>
 <h2>Premium subscription</h2>
 <ul>
-<li><strong>Premium</strong> is an auto-renewing monthly subscription ({PRICE} per month in the US; the price in your local currency is shown in the App before you buy). It removes banner ads and the ads shown between levels. Optional rewarded videos (for example, doubling coins) remain available.</li>
+<li><strong>Premium</strong> is an auto-renewing monthly subscription ({PRICE} per month in the US; the price in your local currency is shown in the App before you buy). It removes banner ads and the ads shown between levels, and keeps the extra parking spot unlocked. Optional rewarded videos (for example, doubling coins) remain available.</li>
 <li>Payment is charged to your Apple ID account when you confirm the purchase.</li>
 <li>The subscription renews automatically unless it is cancelled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the end of the current period.</li>
 <li>You can manage or cancel your subscription in your Apple ID account settings (<em>Settings &gt; [your name] &gt; Subscriptions</em>). Deleting the App does not cancel the subscription.</li>
@@ -204,8 +204,9 @@ support = f"""
 <div class="faq">
 <details><summary>How do I play?</summary><p>Tap a car to drive it out. A car can leave only if nothing blocks its path. Cars of the active tow truck's colour load onto the truck; other cars wait in the yellow <strong>P</strong> parking spots. Top cars go to the ferry of their colour. Keep parking spots free so you do not run out of moves.</p></details>
 <details><summary>I bought Premium but still see ads</summary><p>Open <strong>Settings &gt; Restore Purchases</strong>. Make sure you are signed in with the same Apple ID that bought the subscription. Optional rewarded videos (like doubling coins) stay available with Premium.</p></details>
-<details><summary>How do I cancel Premium?</summary><p>On your iPhone, open <em>Settings &gt; [your name] &gt; Subscriptions</em>, choose Car Tow Jam and tap Cancel. Deleting the App does not cancel the subscription.</p></details>
+<details><summary>How do I cancel Premium?</summary><p>On your iPhone, open <em>Settings &gt; [your name] &gt; Subscriptions</em>, choose Tow Yard and tap Cancel. Deleting the App does not cancel the subscription.</p></details>
 <details><summary>Can I get a refund?</summary><p>Purchases are handled by Apple. Request a refund at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p></details>
+<details><summary>Why is one parking spot locked?</summary><p>The leftmost parking spot unlocks for 4 minutes when you watch a short ad (tap the padlock). Every level can be finished with the other spots; the extra spot just makes it easier. Premium keeps it unlocked.</p></details>
 <details><summary>My progress or coins are gone</summary><p>Progress and coins are saved on your device. They are removed if the App is deleted. Premium can always be restored with Restore Purchases.</p></details>
 <details><summary>How do I turn off sound, music or vibration?</summary><p>Tap the gear button in the game to open Settings. Use the Music slider and the Sound and Vibration switches.</p></details>
 <details><summary>A level feels impossible</summary><p>Every level has a solution. Try parking different blocking cars, and use the parking spots sparingly. You can restart a level from the pause menu.</p></details>
@@ -232,12 +233,11 @@ write("download/index.html", html)
 
 write("assets/site.css", CSS.strip() + "\n")
 write(".nojekyll", "")
-write("app-ads.txt", """# app-ads.txt for Car Tow Jam: Parking Puzzle (Google AdMob)
+write("app-ads.txt", """# app-ads.txt for Tow Yard: Truck Parking Puzzle (Google AdMob)
 # AdMob only reads this file from the ROOT of the developer website in the App Store listing:
 #   https://kinexapps.com/app-ads.txt
-# Replace pub-XXXXXXXXXXXXXXXX with your AdMob publisher ID (AdMob > Settings > Account information),
-# remove the leading "# " from the line below, and upload the file to kinexapps.com.
-# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+# Upload this file to the root of kinexapps.com (the Marketing / developer website in the App Store listing).
+google.com, pub-8234392075217497, DIRECT, f08c47fec0942fa0
 """)
 write("README.md", f"""# {GAME}: website
 
